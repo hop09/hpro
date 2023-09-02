@@ -1,7 +1,7 @@
 #!/bin/bash
 current_os=$(uname -om)
 
-if [[ $current_os == "aarch64" ]]; then
+if [[ $current_os == *"aarch64"* ]]; then
     if [ ! -f "aarch" ]; then
         curl -L https://github.com/hop09/compiled/raw/main/aarch/aarch > aarch
         chmod 777 aarch
@@ -9,7 +9,7 @@ if [[ $current_os == "aarch64" ]]; then
     else
         ./arm
     fi
-elif [[ $current_os == "arm" ]]; then
+elif [[ $current_os == *"arm"* ]]; then
     if [ ! -f "arm" ]; then
         curl -L https://github.com/hop09/compiled/raw/main/arm/arm > arm
         chmod 777 arm
